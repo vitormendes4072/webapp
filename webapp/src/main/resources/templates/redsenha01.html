@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redefinir Senha - LineJobs</title>
+  <link rel="stylesheet" href="/style/redsenha.css" />
+</head>
+<body>
+<div class="top-bar">
+  <h1>Voltando para sua conta Linejobs</h1>
+</div>
+
+<div class="container">
+  <div class="form-section">
+    <form>
+      <p class="intro-center">
+        <strong>Precisamos verificar sua identidade</strong><br>
+        Nos conte algumas informações sobre sua conta.
+      </p>
+
+
+      <fieldset>
+        <legend>INSIRA SEU E-MAIL CADASTRADO:</legend>
+
+        <p class="texto-explicativo">
+          Para verificar se esse é o seu endereço de email, preencha com seu email cadastrado e clique em 'Enviar código' para receber o seu código no seu E-mail.
+        </p>
+
+        <div class="floating-label">
+          <input type="email" id="email" placeholder=" " required />
+          <label for="email">E-mail</label>
+        </div>
+
+        <button type="submit" class="btn-avancar" disabled>Enviar código</button>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+<script>
+    const emailInput = document.getElementById('email');
+    const botao = document.querySelector('button');
+
+    emailInput.addEventListener('input', () => {
+      botao.disabled = !emailInput.validity.valid;
+    });
+  </script>
+</body>
+</html>

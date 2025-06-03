@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LineJobs - Criar Conta</title>
+  <link rel="stylesheet" href="/style/form05.css" />
+</head>
+<body>
+<main class="container">
+  <section class="form-section">
+    <h1>Criar uma nova conta</h1>
+    <p class="subtext">Cadastre-se em apenas cinco etapas!</p>
+
+    <div class="steps">
+      <span class="step active"></span>
+      <span class="step active"></span>
+      <span class="step active"></span>
+      <span class="step active"></span>
+      <div class="step active"></div>
+    </div>
+
+    <form id="signupForm">
+      <fieldset>
+        <legend>Defina sua senha de acesso:</legend>
+
+        <div class="floating-label">
+          <input type="password" id="senha" name="senha" placeholder=" " required minlength="8" />
+          <label for="senha">Senha*</label>
+        </div>
+
+        <div class="floating-label">
+          <input type="password" id="confirmaSenha" name="confirmaSenha" placeholder=" " required minlength="8" />
+          <label for="confirmaSenha">Confirme sua senha</label>
+        </div>
+
+        <div class="checkbox-container">
+          <input type="checkbox" id="termos" />
+          <label for="termos">
+            Aceito os
+            <a href="https://example.com/politica-privacidade" target="_blank">
+              Termos e Políticas de Privacidade
+            </a>*
+          </label>
+        </div>
+
+        <div class="button-group">
+          <button type="button" class="btn" onclick="window.location.href='form03emp.html'">Voltar</button>
+          <button type="submit" class="btn">Avançar</button>
+        </div>
+
+
+      </fieldset>
+    </form>
+  </section>
+
+  <section class="info-section">
+    <h2>LineJobs</h2>
+    <h3>Finalize seu Cadastro.</h3>
+    <p>
+      Confirme suas informações, defina sua senha de acesso e aceite nossos Termos de Uso e Política de Privacidade.
+      Ao concluir, você estará pronto(a) para encontrar sua próxima oportunidade de home office!
+    </p>
+  </section>
+</main>
+
+<script src="/script/form05.js"></script>
+</body>
+</html>

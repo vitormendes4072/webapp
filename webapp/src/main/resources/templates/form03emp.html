@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LineJobs - Dados Bancários</title>
+    <link rel="stylesheet" href="/style/form03.css" />
+</head>
+<body>
+<main class="container">
+    <section class="form-section">
+        <h1>Criar uma nova conta</h1>
+        <p class="subtext">Cadastre-se em apenas cinco etapas!</p>
+
+        <div class="steps">
+            <span class="step active"></span>
+            <span class="step active"></span>
+            <span class="step active"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+
+        <form id="dadosBancariosForm">
+            <fieldset>
+                <legend>Dados Bancários:</legend>
+
+                <div class="floating-label">
+                    <input type="text" id="banco" list="lista-bancos" placeholder=" " required />
+                    <label for="banco">Banco*</label>
+                </div>
+                <datalist id="lista-bancos">
+                    <option value="Banco do Brasil"></option>
+                    <option value="Bradesco"></option>
+                    <option value="Caixa Econômica Federal"></option>
+                    <option value="Itaú"></option>
+                    <option value="Santander"></option>
+                    <option value="Nubank"></option>
+                    <option value="Inter"></option>
+                    <option value="C6 Bank"></option>
+                    <option value="BTG Pactual"></option>
+                    <option value="Sicoob"></option>
+                    <option value="Banco Pan"></option>
+                </datalist>
+
+                <div class="input-group">
+                    <div class="floating-label">
+                        <input type="text" id="tipo-conta" placeholder=" " required />
+                        <label for="tipo-conta">Tipo de Conta*</label>
+                    </div>
+                    <div class="floating-label">
+                        <input type="text" id="agencia" placeholder=" " required />
+                        <label for="agencia">Agência*</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="floating-label">
+                        <input type="text" id="conta" placeholder=" " required />
+                        <label for="conta">Número da Conta*</label>
+                    </div>
+                    <div class="floating-label full">
+                        <input type="text" id="chave-pix" placeholder=" " required />
+                        <label for="chave-pix">Chave Pix*</label>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="btn-voltar">Voltar</button>
+                    <button type="submit" class="btn-avancar">Avançar</button>
+                </div>
+
+            </fieldset>
+        </form>
+    </section>
+
+    <section class="info-section">
+        <h2>LineJobs</h2>
+        <h3>Receba seus Pagamentos com Facilidade</h3>
+        <p>Para que você possa receber seus pagamentos de forma rápida e segura após a conclusão de suas tarefas, precisamos de alguns dados bancários. O LineJobs facilita o processo: após a aprovação da empresa, o pagamento será efetuado via Pix diretamente para sua conta.</p>
+    </section>
+</main>
+
+<!-- Corrigido o caminho do script -->
+<script src="/script/form03emp.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LineJobs - Cadastro</title>
+    <link rel="stylesheet" href="/style/form01.css" />
+</head>
+<body>
+<div class="container">
+
+    <!-- Seção do formulário -->
+    <div class="form-section">
+        <h1>Criar uma nova <strong>conta</strong></h1>
+        <p>Cadastre-se em apenas cinco etapas!</p>
+
+        <!-- Indicadores de etapas -->
+        <div class="steps">
+            <span class="step active"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+
+        <!-- Formulário -->
+        <form id="cadastroForm">
+            <fieldset>
+                <legend>Informações:</legend>
+
+                <div class="floating-label">
+                    <input
+                            type="text"
+                            id="nome_empresa"
+                            name="nome_empresa"
+                            placeholder=" "
+                            required
+                    />
+                    <label for="nome_empresa">Nome da Empresa*</label>
+                </div>
+
+                <div class="input-group">
+                    <div class="floating-label">
+                        <input
+                                type="text"
+                                id="cnpj"
+                                name="cnpj"
+                                placeholder=" "
+                                required
+                        />
+                        <label for="cnpj">CNPJ*</label>
+                    </div>
+                    <div class="floating-label">
+                        <input
+                                type="text"
+                                id="razao_social"
+                                name="razao_social"
+                                placeholder=" "
+                                required
+                        />
+                        <label for="razao_social">Razão Social*</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="floating-label">
+                        <input
+                                type="text"
+                                id="setor_atuacao"
+                                name="setor_atuacao"
+                                placeholder=" "
+                                required
+                        />
+                        <label for="setor_atuacao">Setor de Atuação*</label>
+                    </div>
+                    <div class="floating-label">
+                        <input
+                                type="text"
+                                id="descricao_empresa"
+                                name="descricao_empresa"
+                                placeholder=" "
+                                required
+                        />
+                        <label for="descricao_empresa">Descrição da Empresa*</label>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="floating-label">
+                        <select id="natureza_juridica" name="natureza_juridica" required>
+                            <option value="" disabled selected></option>
+                            <option value="sociedade_limitada">Sociedade Limitada</option>
+                            <option value="mei">Microempreendedor Individual</option>
+                            <option value="eirli">Empresa Individual de Responsabilidade Limitada</option>
+                            <option value="sociedade_anonima">Sociedade Anônima</option>
+                            <option value="scp">Sociedade em Conta de Participação</option>
+                            <option value="sociedade_simples">Sociedade Simples</option>
+                            <option value="cooperativa">Cooperativa</option>
+                            <option value="empresa_publica">Empresa Pública</option>
+                            <option value="sociedade_economia_mista">Sociedade de Economia Mista</option>
+                            <option value="ong">Organização Não Governamental</option>
+                            <option value="associacao">Associação</option>
+                            <option value="fundo_privado">Fundo Privado</option>
+                            <option value="consorcio">Consórcio de Empresas</option>
+                        </select>
+                        <label for="natureza_juridica">Natureza Jurídica*</label>
+                    </div>
+                    <div class="floating-label">
+                        <input
+                                type="text"
+                                id="nome_fantasia"
+                                name="nome_fantasia"
+                                placeholder=" "
+                                required
+                        />
+                        <label for="nome_fantasia">Nome Fantasia*</label>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" id="btn-voltar">Voltar</button>
+                    <button type="submit" id="btn-avancar">Avançar</button>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+
+    <!-- Seção de informações laterais -->
+    <div class="info-section">
+        <h1>Cadastro</h1>
+        <p>
+            Para começar o seu cadastro no LineJobs, precisamos de algumas informações essenciais
+            sobre sua empresa. Não se preocupe, seus dados estão completamente seguros conosco e
+            nos ajudarão a criar uma experiência personalizada para encontrar os melhores talentos
+            para o seu time.
+        </p>
+    </div>
+</div>
+
+<!-- Script externo -->
+<script src="/script/form01emp.js"></script>
+</body>
+</html>

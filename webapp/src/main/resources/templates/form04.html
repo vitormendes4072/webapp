@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LineJobs - Sobre Você</title>
+  <link rel="stylesheet" href="/style/form04.css" />
+</head>
+<body>
+<main class="container">
+  <section class="form-section">
+    <h1>Criar uma nova conta</h1>
+    <p class="subtext">Cadastre-se em apenas cinco etapas!</p>
+
+    <div class="steps">
+      <span class="step active"></span>
+      <span class="step active"></span>
+      <span class="step active"></span>
+      <span class="step active"></span>
+      <span class="step"></span>
+    </div>
+
+    <form id="sobreVoceForm">
+      <fieldset>
+        <legend>Nos conte sobre você:</legend>
+
+        <div class="input-group">
+          <div class="floating-label">
+            <input type="text" id="area-atuacao" placeholder=" " required />
+            <label for="area-atuacao">Área de Atuação*</label>
+          </div>
+          <div class="floating-label">
+            <input type="text" id="experiencia" placeholder=" " required />
+            <label for="experiencia">Experiência Profissional*</label>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <div class="floating-label">
+            <input type="text" id="formacao" placeholder=" " required />
+            <label for="formacao">Formação Acadêmica*</label>
+          </div>
+          <div class="floating-label">
+            <input type="text" id="disponibilidade" placeholder=" " required />
+            <label for="disponibilidade">Disponibilidade*</label>
+          </div>
+        </div>
+
+        <div class="floating-label">
+          <textarea id="habilidades" placeholder=" " required></textarea>
+          <label for="habilidades">Habilidades*</label>
+        </div>
+
+        <div class="btn-container">
+          <button type="button" class="btn-voltar" onclick="window.location.href='form03.html'">Voltar</button>
+          <button type="submit" class="btn-avancar">Avançar</button>
+        </div>
+      </fieldset>
+    </form>
+  </section>
+
+  <section class="info-section">
+    <h2>LineJobs</h2>
+    <h3>Conecte-se às Melhores Vagas</h3>
+    <p>Conte-nos sobre suas experiências de trabalho, em quais áreas você se destaca, sua formação e quando você está disponível para novas oportunidades. Não se esqueça de escrever um resumo das suas habilidades — ele é o seu cartão de visitas para as empresas!</p>
+  </section>
+</main>
+
+<script src="/script/form04.js"></script>
+</body>
+</html>

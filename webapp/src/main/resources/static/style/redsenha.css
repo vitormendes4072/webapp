@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  body, html {
+    height: 100%;
+    background: #fff;
+    color: #333;
+  }
+
+  /* Barra de topo com gradiente */
+  .top-bar {
+    background: linear-gradient(90deg, #7234b4, #ff3c5f);
+    padding: 30px 0;
+    text-align: center;
+    color: white;
+  }
+
+  .top-bar h1 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: calc(100vh - 80px); /* compensa o topo */
+    flex-wrap: wrap;
+  }
+
+  .form-section {
+    flex: 2;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+  }
+
+  .form-section h1 {
+    font-size: 2.2rem;
+    color: #7234b4;
+    text-align: center;
+  }
+
+  .form-section p {
+    margin: 10px 0 30px;
+    color: #000;
+  }
+
+  .steps {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 30px;
+    justify-content: center;
+  }
+
+  .step {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid #7234b4;
+  }
+
+  .step.active {
+    background: linear-gradient(to right, #1fd1f9, #1fd1f9);
+    border: 2px solid white;
+    box-shadow: 0 0 0 1px #7234b4;
+  }
+
+  form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  form fieldset {
+    border: 0.05px solid #7234b4;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+  }
+
+  form legend {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #7234b4;
+    padding: 0 10px;
+    margin-left: 10px;
+    background: #fff;
+    border-left: 4px solid #ff3c5f;
+  }
+
+  form label {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    display: block;
+    color: #000;
+  }
+
+  form input[type="password"],
+  form input[type="text"],
+  form input[type="email"],
+  form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid transparent;
+    border-radius: 0px;
+    background: transparent;
+    background-image: linear-gradient(white, white), linear-gradient(45deg, #7234b4, #ff3c5f);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    color: #000;
+    outline: none;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .input-group > div {
+    flex: 1;
+  }
+
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 0.9em;
+  }
+
+  .checkbox-container input {
+    margin-right: 10px;
+  }
+
+  .checkbox-container a {
+    color: #b621fe;
+    text-decoration: none;
+  }
+
+  .checkbox-container a:hover {
+    text-decoration: underline;
+  }
+
+  button,
+  .btn,
+  .btn-avancar {
+    margin-top: 25px;
+    background: linear-gradient(45deg, #7234b4, #7234b4, #ff3c5f);
+    color: white;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    width: 100%;
+    background-size: 600%;
+    filter: blur(0.5px);
+    z-index: -1;
+    transition: 0.3s ease;
+    animation: glowing 20s linear infinite;
+  }
+
+  @keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+  }
+
+  button:hover,
+  .btn:hover,
+  .btn-avancar:hover {
+    opacity: 0.9;
+  }
+
+  button:disabled,
+  .btn:disabled,
+  .btn-avancar:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    filter: none;
+  }
+
+  /* Label flutuante */
+  .floating-label {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .floating-label input,
+  .floating-label select {
+    width: 100%;
+    padding: 12px 10px 12px 10px;
+    border: 1px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    background-image: linear-gradient(white, white), linear-gradient(45deg, #7234b4, #ff3c5f);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    font-size: 1rem;
+    outline: none;
+  }
+
+  /* Label posicionado sobre o input */
+  .floating-label label {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    color: #888;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    background-color: white;
+    padding: 0 4px;
+  }
+
+  /* Quando input ou select estiver preenchido ou em foco */
+  .floating-label input:focus + label,
+  .floating-label input:not(:placeholder-shown) + label,
+  .floating-label select:focus + label,
+  .floating-label select:valid + label {
+    top: -10px;
+    left: 8px;
+    font-size: 0.75rem;
+    color: #7234b4;
+    background: white;
+  }
+
+  .floating-label select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image:
+      linear-gradient(white, white),
+      linear-gradient(45deg, #7234b4, #ff3c5f),
+      url("data:image/svg+xml;utf8,<svg fill='%23000' height='10' viewBox='0 0 24 24' width='10' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: center center, center center, right 10px center;
+    background-size: 100% 100%, 100% 100%, 12px;
+    padding-right: 30px;
+  }
+
+  /* Responsividade */
+  @media (max-width: 1024px) {
+    .container {
+      flex-direction: column;
+    }
+
+    .form-section,
+    .info-section {
+      width: 100%;
+      padding: 30px;
+    }
+
+    .info-section {
+      order: -1;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .info-section p {
+      max-width: none;
+    }
+
+    .steps {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .step {
+      width: 20px;
+      height: 20px;
+    }
+
+    .input-group {
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .form-section h1 {
+      font-size: 1.8rem;
+    }
+
+    .info-section h1 {
+      font-size: 2rem;
+    }
+
+    .info-section h2 {
+      font-size: 1.2rem;
+    }
+  }
+
+  .texto-explicativo {
+    text-align: left;
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .intro-center {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #000;
+  }

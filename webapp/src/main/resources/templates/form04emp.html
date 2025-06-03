@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LineJobs - Sobre Você</title>
+    <link rel="stylesheet" href="/style/form04.css" />
+</head>
+<body>
+<main class="container">
+    <section class="form-section">
+        <h1>Criar uma nova conta</h1>
+        <p class="subtext">Cadastre-se em apenas cinco etapas!</p>
+
+        <div class="steps">
+            <span class="step active"></span>
+            <span class="step active"></span>
+            <span class="step active"></span>
+            <span class="step active"></span>
+            <span class="step"></span>
+        </div>
+
+        <form id="sobreVoceForm">
+            <fieldset>
+                <legend>Sobre o Responsável da Empresa:</legend>
+
+                <div class="floating-label">
+                    <input type="text" id="nome-ceo" name="nome-ceo" placeholder=" " required />
+                    <label for="nome-ceo">Nome do CEO*</label>
+                </div>
+
+                <div class="floating-label">
+                    <input type="tel" id="telefone-ceo" name="telefone-ceo" placeholder=" " required />
+                    <label for="telefone-ceo">Telefone do CEO*</label>
+                </div>
+
+                <div class="floating-label">
+                    <input type="email" id="email-ceo" name="email-ceo" placeholder=" " required />
+                    <label for="email-ceo">E-mail do CEO*</label>
+                </div>
+
+                <div class="btn-container">
+                    <button type="button" class="btn-voltar" onclick="window.location.href='form03emp.html'">Voltar</button>
+                    <button type="submit" class="btn-avancar">Avançar</button>
+                </div>
+
+            </fieldset>
+        </form>
+    </section>
+
+    <section class="info-section">
+        <h2>LineJobs</h2>
+        <h3>Conecte-se às Melhores Vagas</h3>
+        <p>Conte-nos sobre suas experiências de trabalho, em quais áreas você se destaca, sua formação e quando você está disponível para novas oportunidades. Não se esqueça de escrever um resumo das suas habilidades — ele é o seu cartão de visitas para as empresas!</p>
+    </section>
+</main>
+
+<script src="/script/form04emp.js"></script>
+</body>
+</html>

@@ -1,0 +1,578 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    /* Remove a margem padrão do body e html. */
+    padding: 0;
+    /* Remove o preenchimento padrão do body e html. */
+    height: 100%;
+    /* Garante que body e html ocupem 100% da altura da janela. */
+    font-family: sans-serif;
+    /* Define a fonte padrão para a página. */
+    width: 100%;
+    height: 100%;
+     font-family: 'Inter', sans-serif;
+
+}
+
+.container {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    flex-direction: row;
+    /* Usa o modelo de layout Flexbox. */
+    height: 100vh;
+    /* Define a altura do container como 100% da altura da viewport. */
+    width: 100%;
+    /* Define a largura do container como 100% da largura da viewport. */
+}
+
+.left-side {
+    background: linear-gradient(-180deg, #7234b4, #7234b4, #ff3c5f);
+    /* Define um gradiente linear como fundo. */
+    color: white;
+    /* Define a cor do texto como branco. */
+    display: flex;
+    /* Usa Flexbox para o layout interno. */
+    flex-direction: column;
+    /* Organiza os itens em coluna. */
+    justify-content: center;
+    /* Centraliza os itens verticalmente. */
+    align-items: center;
+    /* Centraliza os itens horizontalmente. */
+    width: 50%;
+    /* Define a largura como 50% do container pai. */
+    padding: 40px 20px;
+    /* Adiciona preenchimento interno. */
+    text-align: center;
+    /* Alinha o texto ao centro. */
+    position: relative; /* Adicionado para posicionar o logo */
+    min-height: 50vh; /* <-- AQUI está o controle */
+}
+
+.left-side h1 {
+    font-size: 40px; /* ou o valor que você estiver usando */
+    line-height: 1.1; /* padrão é ~1.5, você pode reduzir */
+    margin: 0; /* zera espaço extra externo */
+}
+
+.left-side p {
+    font-size: 16px;
+    line-height: 1.2; /*pode ajustar conforme seu gosto */
+    margin: 0;
+}
+
+.right-side {
+    background-color: #ffffff;
+    /* Define a cor de fundo do. */
+    display: flex;
+    /* Usa Flexbox para o layout interno. */
+    justify-content: center;
+    /* Centraliza os itens horizontalmente. */
+    align-items: center;
+    /* Centraliza os itens verticalmente. */
+    width: 50%;
+    /* Define a largura como 50% do container pai. */
+}
+
+.login-box {
+    background-color: rgb(255, 255, 255);
+    /* Define a cor de fundo. */
+    padding: 10px;
+    /* Adiciona preenchimento interno. */
+    border-radius: 10px;
+    /* Arredonda os cantos. */
+    box-shadow: 0 0 20px rgba(189, 19, 19, 0.1);
+    /* Adiciona uma sombra à caixa. */
+    width: 50%;
+    /* Define a largura como 50% do container pai. */
+    max-width: 400px;
+    /* Define a largura máxima. */
+    text-align: center;
+    /* Alinha o texto ao centro. */
+}
+
+.login-box h2 {
+    color: #7234b4;
+    /* Define a cor do texto do h2. */
+    margin-bottom: 10px;
+    /* Adiciona margem abaixo do h2. */
+    font-size: 2em;
+    /* Define o tamanho da fonte do h2. */
+}
+
+.login-box p {
+    color: #777;
+    /* Define a cor do texto do parágrafo. */
+    margin-bottom: 30px;
+    /* Adiciona margem abaixo do parágrafo. */
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    /* Usa Flexbox para o layout interno. */
+    flex-direction: column;
+    /* Organiza os itens em coluna. */
+    margin-bottom: 20px;
+    /* Adiciona margem abaixo do grupo de input. */
+    text-align: left;
+    /* Alinha o texto à esquerda. */
+
+    align-items: center; /* Centraliza horizontalmente o input */
+    width: 100%;
+}
+
+.input-group label {
+    color: #000000;
+    /* Define a cor do texto do label. */
+    padding: 0 5px;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    /*Left é para deixar as letras do "Email" e "Password" mais para a direita,
+    ele recua da esquerda para a direita*/
+    left: 1.8em;
+    pointer-events: none;
+    transition: .3s;
+    margin-bottom: 5px;
+    /* Adiciona margem abaixo do label. */
+}
+
+/*Borda do Contorno das Box do E-mail e Password*/
+.input-group input {
+    color: #7234b4;
+    background: transparent;
+    padding: 0 1rem;
+    height: 50px;
+
+    width: 100%; /* Pode usar 100% pois o pai tem largura definida */
+    max-width: 300px; /* Para limitar a largura máxima se quiser */
+
+    border: 2px solid transparent;
+    border-radius: 5px;
+    outline: none;
+    background-image: linear-gradient(white, white),
+                      linear-gradient(45deg, #7234b4, #ff3c5f);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+
+
+input:focus~label,
+input:valid~label {
+    top: 0;
+    background-color: #ffffff;
+    font-size: 0.7rem;
+}
+
+
+.options {
+    display: flex;
+    /* Usa Flexbox para o layout interno. */
+    justify-content: space-between;
+    /* Distribui o espaço entre os itens. */
+    align-items: center;
+    /* Alinha os itens verticalmente. */
+    margin-bottom: 20px;
+    /* Adiciona margem abaixo das opções. */
+    font-size: 0.9em;
+    /* Define o tamanho da fonte das opções. */
+    color: #7234b4;
+    /* Define a cor do texto das opções. */
+}
+
+.options a {
+    color: #7234b4;
+    /* Define a cor do link. */
+    text-decoration: none;
+    /* Remove a decoração de texto (sublinhado). */
+}
+
+.options a:hover {
+    text-decoration: underline;
+    /* Adiciona sublinhado ao link ao passar o mouse. */
+}
+
+.options label {
+    display: flex;
+    /* Usa Flexbox para o layout interno. */
+    align-items: center;
+    /* Alinha os itens verticalmente. */
+}
+
+.options input[type="checkbox"] {
+    margin-right: 5px;
+    /* Adiciona margem à direita do checkbox. */
+}
+
+/*Botão "Log in"*/
+.login-box button {
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #9863c2, #7234b4,#7234b4 , #ff3c5f,#fb3c5c, #8c1a91, #9863c2
+
+    );
+    /* Define um gradiente linear como fundo. */
+    color: white;
+    /* Define a cor do texto do botão. */
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(0.5px);
+    /* Remove a borda do botão. */
+    border-radius: 5px;
+    /* Arredonda os cantos do botão. */
+    padding: 15px 20px;
+    /* Adiciona preenchimento interno ao botão. */
+    font-size: 1.1em;
+    /* Define o tamanho da fonte do botão. */
+    cursor: pointer;
+    /* Define o cursor como ponteiro ao passar o mouse. */
+
+    width: 100%;
+    /* Define a largura do botão como 100% do container pai. */
+    max-width: 300px;
+    margin: 0 auto; /* Centraliza */
+
+    transition: 0.45s ease;
+    /* Adiciona uma transição suave ao fundo. */
+
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+
+/*hover*/
+.login-box button:hover::before {
+    opacity: 1;
+}
+
+.login-box button:active:after {
+    background: transparent;
+}
+
+.login-box button:active {
+    color: #fff;
+    font-weight: bold;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 15px;
+    /* Adiciona margem acima do link de cadastro. */
+    color: #5e17eb;
+    /* Define a cor do texto do link de cadastro. */
+    font-size: 0.9em;
+}
+
+.signup-link a {
+    color: #7234b4;
+    /* Define a cor do link de cadastro. */
+    text-decoration: none;
+    /* Remove a decoração de texto (sublinhado). */
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+    /* Adiciona sublinhado ao link de cadastro ao passar o mouse. */
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    opacity: 0.5;
+    animation: float 8s ease-in-out infinite;
+}
+
+/* LADO ESQUERDO */
+
+/* Círculo superior esquerdo */
+.circle-left-top {
+    width: 190px;
+    height: 190px;
+    top: -60px;
+    left: 600px;
+    background: radial-gradient(circle, #a259ff, #c471ed, #f64f59);
+}
+
+/* Círculo inferior esquerdo */
+.circle-left-bottom {
+    width: 120px;
+    height: 120px;
+    bottom: -40px;
+    left: 100px;
+    background: radial-gradient(circle, #4776e6, #8e54e9);
+}
+
+/* LADO DIREITO */
+
+/* Círculo superior direito - maior */
+.circle-right-top1 {
+    width: 220px;
+    height: 220px;
+    top: -60px;
+    right: -60px;
+    background: radial-gradient(circle, #8e2de2, #4a00e0);
+}
+
+/* Círculo superior direito - médio */
+.circle-right-top2 {
+    width: 140px;
+    height: 140px;
+    top: 110px;
+    right: -35px;
+   background: radial-gradient(circle at center, #d88aff 0%, #9b30ff 50%, #5900a6 100%);
+
+}
+
+/* Círculo superior direito - pequeno */
+.circle-right-top3 {
+    width: 110px;
+    height: 110px;
+    top: 220px;
+    right: -30px;
+    background: radial-gradient(circle, #c471ed, #f64f59);
+}
+
+/* Círculo inferior direito */
+.circle-right-bottom {
+    width: 110px;
+    height: 110px;
+    bottom: -30px;
+    right: 0.5px;
+    background: radial-gradient(circle, #91f9d8,#98bcef, #185a9d);
+}
+
+/* Animação opcional */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.logomarca {
+    width: 200px; /* Ajuste o tamanho conforme necessário */
+    height: auto; /* Mantém a proporção */
+    position: absolute; /* Posiciona o logo */
+    top: 50px; /* Distância do topo */
+    left: 50px; /* Distância da esquerda */
+}
+
+.logo-container {
+    width: 70%;   /* ajuste como preferir */
+    height: auto;   /* mantém proporção */
+    display: block;
+    margin: 0 auto; /* centraliza horizontalmente */
+}
+
+
+/*Destaca campos com erro usando identação em vermelho */
+.input-group.error input {
+    border-color: red;
+}
+
+.circle-deco {
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: rgba(200, 200, 255, 0.4);
+    z-index: 0;
+  }
+
+/* Envolve o botão para centralizar e distanciar */
+.toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 30px 0; /* Espaçamento vertical entre campos */
+}
+
+/* Botão Toggle */
+.btn {
+    position: relative;
+    height: 56px;
+}
+
+/* Esconde o checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Label estilizada como botão deslizante */
+.btn label {
+    position: relative;
+    display: inline-block;
+    width: 250px;
+    height: 56px;
+    background: linear-gradient(
+        45deg,
+        #9863c2, #7234b4, #7234b4, #ff3c5f, #fb3c5c, #8c1a91, #9863c2);
+    border-radius: 28px;
+    cursor: pointer;
+    box-shadow: 1px 6px 11px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.4s;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Textos fixos Cooperado e Empresa */
+.btn label::before,
+.btn label::after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    font-size: 16px;
+    color: white;
+}
+
+.btn label::before {
+    content: "Cooperado";
+    left: 23px;
+}
+
+.btn label::after {
+    content: "Empresa";
+    right: 29px;
+}
+
+/* Botão móvel interno */
+.btn label span {
+    position: absolute;
+    left: 10px;
+    top: 6px;
+    width: 110px;
+    height: 44px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 22px;
+    transition: left 0.4s;
+    z-index: 1;
+}
+
+/* Quando marcado, move o botão */
+input[type="checkbox"]:checked + label span {
+    left: 130px;
+}
+
+
+
+/*(RESPONSIVIDADE ABAIXO)*/
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+      }
+
+      .left-side, .right-side {
+        width: 100%;
+        padding: 2rem;
+        text-align: center;
+        align-items: center;
+        position: relative;
+      }
+
+    .logo-container {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        width: 120px; /* ou menor se precisar */
+        height: auto;
+    }
+
+
+    .left-side h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+    .left-side p {
+        font-size: 14px;
+        margin-bottom: 20px;
+        padding: 0 10px;
+        margin-top: 100px; /* espaço extra abaixo da logo */
+        text-align: center;
+      }
+
+    .right-side {
+      order: 2;
+    }
+
+    .logomarca {
+        width: 140px;
+        height: auto;
+        position: relative;
+        margin-top: 20px;
+        z-index: 2;
+        margin: 0 auto 20px auto;
+    }
+
+    .circle {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      opacity: 0.2;
+      z-index: 0;
+    }
+
+    .circle-left-top {
+      top: 10px;
+      left: 10px;
+    }
+
+    .circle-left-bottom {
+      bottom: 10px;
+      left: 10px;
+    }
+
+    .circle-right-top1,
+    .circle-right-top2,
+    .circle-right-top3 {
+      top: 10px;
+      right: 10px;
+    }
+
+    .circle-right-bottom {
+      bottom: 10px;
+      right: 10px;
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 360px;
+      padding: 25px;
+      margin: 20px auto;
+      position: relative;
+      z-index: 1;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .input-group input {
+        max-width: 100%;
+      }
+
+      .login-box button {
+        max-width: 100%;
+    }
+}
+

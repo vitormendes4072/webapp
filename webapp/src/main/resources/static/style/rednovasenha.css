@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    background: #fff;
+    color: #333;
+}
+
+.top-bar {
+    background: linear-gradient(90deg, #7234b4, #ff3c5f);
+    padding: 30px 0;
+    text-align: center;
+    color: white;
+}
+
+.top-bar h1 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    flex-wrap: wrap;
+}
+
+.form-section {
+    flex: 1;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: white;
+}
+
+.intro-center {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+fieldset {
+    border: 0.05px solid #7234b4;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+form {
+    width: 100%;
+    max-width: 500px; /* ou o valor que preferir */
+    margin: 0 auto;
+}
+
+legend {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #7234b4;
+    padding: 0 10px;
+    margin-left: 10px;
+    background: #fff;
+    border-left: 4px solid #ff3c5f;
+}
+
+.texto-explicativo {
+    text-align: left;
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.floating-label {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.floating-label input {
+    width: 100%;
+    padding: 12px 10px;
+    border: 1px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    background-image: linear-gradient(white, white), linear-gradient(45deg, #7234b4, #ff3c5f);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    font-size: 1rem;
+    outline: none;
+    color: #000;
+}
+
+.floating-label label {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    color: #888;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.2s ease all;
+    background-color: white;
+    padding: 0 4px;
+}
+
+.floating-label input:focus + label,
+.floating-label input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 8px;
+    font-size: 0.75rem;
+    color: #7234b4;
+    background: white;
+}
+
+.btn-avancar {
+    margin-top: 25px;
+    background: linear-gradient(45deg, #ff3c5f, #7234b4);
+    color: white;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    width: 100%;
+    background-size: 600%;
+    filter: blur(0.5px);
+    transition: 0.3s ease;
+    animation: glowing 20s linear infinite;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+.btn-avancar:hover {
+    opacity: 0.9;
+}
+
+.btn-avancar:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    filter: none;
+}

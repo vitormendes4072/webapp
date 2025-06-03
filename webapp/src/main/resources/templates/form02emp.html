@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LineJobs - Criar Conta</title>
+  <link rel="stylesheet" href="/style/form02.css" />
+</head>
+<body>
+<div class="container">
+  <section class="form-section">
+    <h1>Criar uma nova <strong>conta</strong></h1>
+    <p>Cadastre-se em apenas cinco etapas!</p>
+
+    <div class="steps">
+      <span class="step active"></span>
+      <span class="step active"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+    </div>
+
+    <form id="cadastroForm">
+      <fieldset>
+        <legend>Informações de Contato:</legend>
+
+        <div class="floating-label">
+          <input type="email" id="emailcorporativo" name="emailcorporativo" placeholder=" " required>
+          <label for="emailcorporativo">E-mail Corporativo*</label>
+        </div>
+
+        <div class="input-group">
+          <div class="floating-label">
+            <input type="tel" id="telefonecomercial" name="telefonecomercial" placeholder=" " required>
+            <label for="telefonecomercial">Telefone Comercial*</label>
+          </div>
+          <div class="floating-label">
+            <input type="text" id="siteempresa" name="siteempresa" placeholder=" ">
+            <label for="siteempresa">Site da Empresa</label>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <div class="floating-label">
+            <input type="text" id="cep" name="cep" placeholder=" " required>
+            <label for="cep">CEP*</label>
+          </div>
+          <div class="floating-label">
+            <input type="text" id="logradouro" name="logradouro" placeholder=" ">
+            <label for="logradouro">Logradouro</label>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <div class="floating-label">
+            <input type="text" id="numero" name="numero" placeholder=" " required>
+            <label for="numero">N°*</label>
+          </div>
+          <div class="floating-label">
+            <input type="text" id="complemento" name="complemento" placeholder=" ">
+            <label for="complemento">Complemento</label>
+          </div>
+        </div>
+
+        <div class="input-group">
+          <div class="floating-label">
+            <input type="text" id="bairro" name="bairro" placeholder=" " required>
+            <label for="bairro">Bairro*</label>
+          </div>
+          <div class="floating-label">
+            <input type="text" id="cidade" name="cidade" placeholder=" " required>
+            <label for="cidade">Cidade*</label>
+          </div>
+          <div class="floating-label">
+            <input type="text" id="estado" name="estado" placeholder=" " required>
+            <label for="estado">Estado*</label>
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button type="button" class="btn-voltar" onclick="voltarPagina()">Voltar</button>
+          <button type="submit" class="btn-avancar">Avançar</button>
+        </div>
+
+      </fieldset>
+    </form>
+  </section>
+
+  <div class="info-section">
+    <h3>Otimize sua Busca</h3>
+    <p>
+      Para personalizarmos sua busca por vagas e oferecermos oportunidades próximas a você, precisamos de suas informações de contato e endereço. Fique tranquilo(a), seus dados estão seguros e serão utilizados para otimizar sua experiência no LineJobs.
+    </p>
+  </div>
+</div>
+
+<script src="/script/form02emp.js"></script>
+</body>
+</html>

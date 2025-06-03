@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verificar Identidade - LineJobs</title>
+  <link rel="stylesheet" href="/style/rednovasenha.css" />
+</head>
+<body>
+<div class="top-bar">
+  <h1>Voltando para sua conta Linejobs</h1>
+</div>
+
+<div class="container">
+  <div class="form-section">
+    <form id="formRedefinirSenha">
+      <p class="intro-center">
+        <strong>"Não se esqueça de anotar em um lugar fácil de lembrar!"</strong><br>
+        Redefinindo o acesso:
+      </p>
+
+      <fieldset>
+        <legend>NOVA SENHA</legend>
+
+        <div class="floating-label">
+          <input type="password" id="novaSenha" placeholder=" " required />
+          <label for="novaSenha">Nova Senha</label>
+        </div>
+
+        <div class="floating-label">
+          <input type="password" id="confirmarSenha" placeholder=" " required />
+          <label for="confirmarSenha">Confirmar a Nova Senha</label>
+        </div>
+
+        <button type="submit" class="btn-avancar" id="btnSalvar" disabled>Salvar</button>
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+<script src="/script/rednovasenha.js"></script>
+</body>
+</html>
