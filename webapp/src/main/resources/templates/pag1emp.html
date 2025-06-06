@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LineJobs_Perfil</title>
+  <link rel="stylesheet" href="../../../../../../GABI_PERFIL_COOP-master/GABI_PERFIL_COOP-master/style/pag1emp.css">
+  <link rel="stylesheet" href="../style/card.css"> <!-- Incluindo o CSS do card -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous">
+</head>
+<body>
+  <div class="page-wrapper"> <!-- Novo contêiner para isolar o conteúdo principal -->
+    <section class="seccion-perfil-usuario">
+      <div class="perfil-usuario-header">
+        <div class="perfil-usuario-portada">
+          <div class="perfil-usuario-avatar">
+            <div class="perfil-usuario-picture">
+              <img src="http://localhost/multimedia/relleno/img-c9.png" alt="" id="avatar-img">
+            </div>
+            <button type="button" class="boton-avatar" onclick="document.getElementById('input-avatar').click()">
+              <i class="far fa-image"></i>
+            </button>
+            <input type="file" id="input-avatar" accept="image/*">
+          </div>
+          <button type="button" class="boton-portada" id="btnCambiarFundo">
+            <i class="far fa-image"></i> Alterar Imagem de Fundo
+          </button>
+          <button id="toggle-theme" class="boton-portada theme-button" style="top: 5rem; right: 1rem;">
+            <i class="fas fa-moon"></i> Tema
+          </button>
+        </div>
+      </div>
+
+      <div class="perfil-usuario-body">
+        <div class="perfil-usuario-bio">
+          <h3 class="titulo">Line Jobes</h3>
+          <p class="texto">Olá somos o Perfil da Linejobs, uma plataforma de recrutamento!
+            Pronto para encontrar seu emprego dos Sonhos ou até
+            mesmo fazer uma renda extra?
+          </p>
+        </div>
+
+        <div class="perfil-usuario-footer">
+          <div class="info-left">
+            <p><i class="fas fa-envelope"></i> E-mail comercial: igor@linejobs.com</p>
+            <p><i class="fas fa-location-arrow"></i> Área de atuação: Plataforma de recrutamento</p>
+            <p><i class="fas fa-graduation-cap"></i> Telefone comercial: (11)95426-2663</p>
+            <p><i class="fas fa-clock"></i> Site: www.linejobs.com</p>
+          </div>
+          <div class="info-right">
+            <p><i class="fas fa-circle" style="color:#C52F87;"></i> CEO: Igor Rodrigues</p>
+            <p><i class="fas fa-circle" style="color:#C52F87;"></i> E-mail: igor.rnagano@senacsp.edu.br</p>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <a href="#" class="boton-action" data-tooltip="Alterar Dados da Empresa" id="open-form-btn"><i class="fas fa-user-edit"></i></a>
+          <a href="curriculo_emp.html" class="boton-action" data-tooltip="Descrição da Empresa"><i class="fas fa-file-alt"></i></a>
+          <a href="#" class="boton-action" data-tooltip="Chat com Cooperados"><i class="fas fa-comments"></i></a>
+          <a href="#" class="boton-action" data-tooltip="Adicionar vagas" id="open-job-form-btn"><i class="fas fa-briefcase"></i></a>
+          <a href="#" class="boton-action" data-tooltip="Feed de Vagas" id="open-feed-btn"><i class="fas fa-search"></i></a>
+        </div>
+
+        <!-- Multi-Step Form for Company Data -->
+        <div class="form-container" id="multi-step-form" style="display: none;">
+          <div class="form-box">
+            <h3>Alterar Dados da Empresa</h3>
+            <div class="form-step step-1 active">
+              <div class="form-group">
+                <i class="fas fa-building"></i>
+                <input type="text" id="nome-empresa" placeholder=" " required>
+                <label for="nome-empresa">Nome da Empresa</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-id-card"></i>
+                <input type="text" id="cnpj" placeholder=" " required>
+                <label for="cnpj">CNPJ</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-file-alt"></i>
+                <input type="text" id="razao-social" placeholder=" " required>
+                <label for="razao-social">Razão Social</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-briefcase"></i>
+                <input type="text" id="setor-atuacao" placeholder=" " required>
+                <label for="setor-atuacao">Setor de Atuação</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-align-left"></i>
+                <textarea id="descricao-empresa" placeholder=" " required></textarea>
+                <label for="descricao-empresa">Descrição da Empresa</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-gavel"></i>
+                <select id="natureza-juridica" required>
+                  <option value="" disabled selected hidden>Selecione</option>
+                  <option value="ltda">LTDA</option>
+                  <option value="sa">S.A.</option>
+                  <option value="mei">MEI</option>
+                  <option value="eireli">EIRELI</option>
+                  <option value="associacao">Associação</option>
+                </select>
+                <label for="natureza-juridica">Natureza Jurídica</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-store"></i>
+                <input type="text" id="nome-fantasia" placeholder=" " required>
+                <label for="nome-fantasia">Nome Fantasia</label>
+              </div>
+              <div class="form-navigation">
+                <button class="next-btn">Próximo</button>
+              </div>
+            </div>
+            <div class="form-step step-2">
+              <div class="form-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email-corporativo" placeholder=" " required>
+                <label for="email-corporativo">E-mail Corporativo</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-phone"></i>
+                <input type="tel" id="telefone-comercial" placeholder=" " required>
+                <label for="telefone-comercial">Telefone Comercial</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-globe"></i>
+                <input type="url" id="site-empresa" placeholder=" " required>
+                <label for="site-empresa">Site da Empresa</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-user-tie"></i>
+                <input type="text" id="nome-ceo" placeholder=" " required>
+                <label for="nome-ceo">Nome do CEO</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-phone"></i>
+                <input type="tel" id="telefone-ceo" placeholder=" " required>
+                <label for="telefone-ceo">Telefone do CEO</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email-ceo" placeholder=" " required>
+                <label for="email-ceo">E-mail do CEO</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-university"></i>
+                <select id="bank" required>
+                  <option value="" disabled selected hidden>Selecione</option>
+                  <option value="001">Banco do Brasil</option>
+                  <option value="033">Santander</option>
+                  <option value="237">Bradesco</option>
+                  <option value="341">Itaú</option>
+                  <option value="104">Caixa Econômica</option>
+                </select>
+                <label for="bank">Banco</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-piggy-bank"></i>
+                <select id="account-type" required>
+                  <option value="" disabled selected hidden>Selecione</option>
+                  <option value="corrente">Corrente</option>
+                  <option value="poupanca">Poupança</option>
+                </select>
+                <label for="account-type">Tipo de Conta</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-building"></i>
+                <input type="text" id="agency" placeholder=" " required>
+                <label for="agency">Agência</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-hashtag"></i>
+                <input type="text" id="account-number" placeholder=" " required>
+                <label for="account-number">Número da Conta</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-key"></i>
+                <input type="text" id="pix-key" placeholder=" " required>
+                <label for="pix-key">Chave Pix</label>
+              </div>
+              <div class="form-navigation">
+                <button class="prev-btn">Voltar</button>
+                <button class="next-btn">Próximo</button>
+              </div>
+            </div>
+            <div class="form-step step-3">
+              <div class="form-group">
+                <i class="fas fa-map-pin"></i>
+                <input type="text" id="cep" placeholder=" " required>
+                <label for="cep">CEP</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-road"></i>
+                <input type="text" id="logradouro" placeholder=" " required readonly>
+                <label for="logradouro">Logradouro</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" id="bairro" placeholder=" " required readonly>
+                <label for="bairro">Bairro</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-city"></i>
+                <input type="text" id="cidade" placeholder=" " required readonly>
+                <label for="cidade">Cidade</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-map"></i>
+                <input type="text" id="estado" placeholder=" " required readonly>
+                <label for="estado">Estado</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-home"></i>
+                <input type="text" id="numero" placeholder=" " required>
+                <label for="numero">Número</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-plus"></i>
+                <input type="text" id="complemento" placeholder=" ">
+                <label for="complemento">Complemento</label>
+              </div>
+              <div class="form-navigation">
+                <button class="prev-btn">Voltar</button>
+                <button class="submit-btn">Enviar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job Vacancy Form Modal -->
+        <div class="form-container" id="job-form-modal" style="display: none;">
+          <div class="form-box">
+            <h3>Adicionar Vaga</h3>
+            <form id="jobForm">
+              <div class="form-group">
+                <i class="fas fa-building"></i>
+                <input type="text" id="companyName" placeholder=" " required>
+                <label for="companyName">Nome da Empresa*</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-align-left"></i>
+                <textarea id="description" placeholder=" " required></textarea>
+                <label for="description">Descrição*</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" id="location" placeholder=" " required>
+                <label for="location">Local*</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-file-contract"></i>
+                <input type="text" id="contract" placeholder=" " required>
+                <label for="contract">Contrato*</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-money-bill"></i>
+                <input type="text" id="salary" placeholder=" " required>
+                <label for="salary">Salário*</label>
+              </div>
+              <div class="form-group">
+                <i class="fas fa-calendar-alt"></i>
+                <input type="date" id="publicationDate" placeholder=" " required>
+                <label for="publicationDate">Data de Publicação*</label>
+              </div>
+              <div class="form-navigation">
+                <button type="button" class="prev-btn" id="close-job-form">Voltar</button>
+                <button type="submit" class="submit-btn">Salvar Vaga e Publicar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Feed de Vagas Modal -->
+        <div class="form-container" id="feed-vagas-modal" style="display: none; z-index: 1001;">
+          <div class="form-box" style="background: transparent; box-shadow: none; padding: 0; max-width: 400px; height: 600px;">
+            <button type="button" class="prev-btn" id="close-feed-btn" style="position: absolute; top: 1rem; right: 1rem; z-index: 1002;">Fechar</button>
+            <div id="card-container" style="height: 100%; overflow: hidden;"></div>
+          </div>
+        </div>
+      </div>
+
+      <input type="file" id="input-fundo" accept="image/*" style="display:none;">
+    </section>
+  </div>
+
+  <script src="../../../../../../GABI_PERFIL_COOP-master/GABI_PERFIL_COOP-master/java/pag1emp.js"></script>
+</html>

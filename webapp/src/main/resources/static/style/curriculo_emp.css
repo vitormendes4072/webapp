@@ -1,0 +1,64 @@
+body {
+    background: linear-gradient(to bottom, #4b0082, #000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .container {
+    background: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    width: 400px;
+  }
+
+  h2 {
+    margin: 0 0 10px;
+  }
+
+  .file-input {
+    margin: 40px 0; /* Increased from 20px to 40px for more spacing */
+  }
+
+  .file-input input[type="file"] {
+    display: none;
+  }
+
+  .file-input label {
+    background: #2a2a2a;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #9370db;
+  }
+
+  #fileName {
+    margin-left: 10px;
+    color: #ccc;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .back-btn, .submit-btn {
+    background: none;
+    border: 2px solid #9370db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: #9370db;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .back-btn:hover, .submit-btn:hover {
+    background: #9370db;
+    color: #fff;
+  }

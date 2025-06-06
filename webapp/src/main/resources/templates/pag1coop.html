@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LineJobs_Perfil</title>
+  <link rel="stylesheet" href="../../../../../../GABI_PERFIL_COOP-master/GABI_PERFIL_COOP-master/style/pag1coop.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous">
+</head>
+
+<body>
+  <section class="seccion-perfil-usuario">
+    <div class="perfil-usuario-header">
+      <div class="perfil-usuario-portada">
+        <div class="perfil-usuario-avatar">
+          <div class="perfil-usuario-picture">
+            <img src="http://localhost/multimedia/relleno/img-c9.png" alt="" id="avatar-img">
+          </div>
+          <button type="button" class="boton-avatar" onclick="document.getElementById('input-avatar').click()">
+            <i class="far fa-image"></i>
+          </button>
+          <input type="file" id="input-avatar" accept="image/*">
+        </div>
+        <button type="button" class="boton-portada" id="btnCambiarFundo">
+          <i class="far fa-image"></i> Alterar Imagem de Fundo
+        </button>
+        <button id="toggle-theme" class="boton-portada theme-button" style="top: 5rem; right: 1rem;">
+          <i class="fas fa-moon"></i> Tema
+        </button>
+      </div>
+    </div>
+
+    <div class="perfil-usuario-body">
+      <div class="perfil-usuario-bio">
+        <h3 class="titulo">Line Jober</h3>
+        <p class="texto">Olá somos o Perfil da Linejobs e trouxemos a solução para seus Problemas !
+          Este é um Perfil exemplo de como você pode personalizar sua conta para encontrar seu emprego dos Sonhos ou até
+          mesmo fazer uma renda extra.
+        </p>
+      </div>
+
+      <div class="perfil-usuario-footer">
+        <div class="info-left">
+          <p><i class="fas fa-envelope"></i> gabriela.lgs@outlook.com</p>
+          <p><i class="fas fa-location-arrow"></i> Área de atuação</p>
+          <p><i class="fas fa-graduation-cap"></i> Formação Acadêmica</p>
+          <p><i class="fas fa-clock"></i> Disponibilidade</p>
+        </div>
+        <div class="info-right">
+          <p><i class="fas fa-circle" style="color:#C52F87;"></i> Habilidade 01</p>
+          <p><i class="fas fa-circle" style="color:#C52F87;"></i> Habilidade 02</p>
+          <p><i class="fas fa-circle" style="color:#C52F87;"></i> Habilidade 03</p>
+          <p><i class="fas fa-circle" style="color:#C52F87;"></i> Habilidade 04</p>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <a href="#" class="boton-action" data-tooltip="Alterar Dados Pessoais" id="open-form-btn"><i class="fas fa-user-edit"></i></a>
+        <a href="../../../../../../GABI_PERFIL_COOP-master/GABI_PERFIL_COOP-master/index/curriculo_coop.html" class="boton-action" data-tooltip="Currículo"><i class="fas fa-file-alt"></i></a>
+        <a href="#" class="boton-action" data-tooltip="Chat com Empresas"><i class="fas fa-comments"></i></a>
+        <a href="#" class="boton-action" data-tooltip="Minhas Candidaturas"><i class="fas fa-briefcase"></i></a>
+        <a href="#" class="boton-action" data-tooltip="Feed de Vagas"><i class="fas fa-search"></i></a>
+      </div>
+
+      <!-- Multi-Step Form -->
+      <div class="form-container" id="multi-step-form" style="display: none;">
+        <div class="form-box">
+          <h3>Alterar Dados</h3>
+          <div class="form-step step-1 active">
+            <div class="form-group">
+              <i class="fas fa-briefcase"></i>
+              <input type="text" id="area-atuacao" placeholder=" " required>
+              <label for="area-atuacao">Área de Atuação</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-graduation-cap"></i>
+              <input type="text" id="formacao-academica" placeholder=" " required>
+              <label for="formacao-academica">Formação Acadêmica</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-clock"></i>
+              <input type="text" id="disponibilidade" placeholder=" " required>
+              <label for="disponibilidade">Disponibilidade</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-check-circle"></i>
+              <input type="text" id="habilidade1" placeholder=" " required>
+              <label for="habilidade1">Habilidade 1</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-check-circle"></i>
+              <input type="text" id="habilidade2" placeholder=" " required>
+              <label for="habilidade2">Habilidade 2</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-check-circle"></i>
+              <input type="text" id="habilidade3" placeholder=" " required>
+              <label for="habilidade3">Habilidade 3</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-check-circle"></i>
+              <input type="text" id="habilidade4" placeholder=" " required>
+              <label for="habilidade4">Habilidade 4</label>
+            </div>
+            <div class="form-navigation">
+              <button class="next-btn">Próximo</button>
+            </div>
+          </div>
+          <div class="form-step step-2">
+            <div class="form-group">
+              <i class="fas fa-user"></i>
+              <input type="text" id="first-name" placeholder=" " required>
+              <label for="first-name">Nome</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-user"></i>
+              <input type="text" id="last-name" placeholder=" " required>
+              <label for="last-name">Sobrenome</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-calendar"></i>
+              <input type="date" id="birth-date" placeholder=" " required>
+              <label for="birth-date">Data de Nascimento</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-envelope"></i>
+              <input type="email" id="email" placeholder=" " required>
+              <label for="email">E-mail</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-phone"></i>
+              <input type="tel" id="phone" placeholder=" " required>
+              <label for="phone">Celular</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-heart"></i>
+              <select id="civil-status" required>
+                <option value="" disabled selected hidden>Selecione</option>
+                <option value="solteiro">Solteiro</option>
+                <option value="casado">Casado</option>
+                <option value="viuvo">Viúvo</option>
+                <option value="divorciado">Divorciado</option>
+                <option value="uniao-estavel">União Estável</option>
+              </select>
+              <label for="civil-status">Estado Civil</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-globe"></i>
+              <input type="text" id="nationality" placeholder=" " required>
+              <label for="nationality">Nacionalidade</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-venus-mars"></i>
+              <select id="gender" required>
+                <option value="" disabled selected hidden>Selecione</option>
+                <option value="feminino">Feminino</option>
+                <option value="masculino">Masculino</option>
+                <option value="outro">Outro</option>
+              </select>
+              <label for="gender">Gênero</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-id-card"></i>
+              <input type="text" id="cpf" placeholder=" " required>
+              <label for="cpf">CPF</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-id-card"></i>
+              <input type="text" id="rg" placeholder=" " required>
+              <label for="rg">RG</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-university"></i>
+              <select id="bank" required>
+                <option value="" disabled selected hidden>Selecione</option>
+                <option value="001">Banco do Brasil</option>
+                <option value="033">Santander</option>
+                <option value="237">Bradesco</option>
+                <option value="341">Itaú</option>
+                <option value="104">Caixa Econômica</option>
+              </select>
+              <label for="bank">Banco</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-piggy-bank"></i>
+              <select id="account-type" required>
+                <option value="" disabled selected hidden>Selecione</option>
+                <option value="corrente">Corrente</option>
+                <option value="poupanca">Poupança</option>
+              </select>
+              <label for="account-type">Tipo de Conta</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-building"></i>
+              <input type="text" id="agency" placeholder=" " required>
+              <label for="agency">Agência</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-hashtag"></i>
+              <input type="text" id="account-number" placeholder=" " required>
+              <label for="account-number">Número da Conta</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-key"></i>
+              <input type="text" id="pix-key" placeholder=" " required>
+              <label for="pix-key">Chave Pix</label>
+            </div>
+            <div class="form-navigation">
+              <button class="prev-btn">Voltar</button>
+              <button class="next-btn">Próximo</button>
+            </div>
+          </div>
+          <div class="form-step step-3">
+            <div class="form-group">
+              <i class="fas fa-map-pin"></i>
+              <input type="text" id="cep" placeholder=" " required>
+              <label for="cep">CEP</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-road"></i>
+              <input type="text" id="logradouro" placeholder=" " required readonly>
+              <label for="logradouro">Logradouro</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-map-marker-alt"></i>
+              <input type="text" id="bairro" placeholder=" " required readonly>
+              <label for="bairro">Bairro</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-city"></i>
+              <input type="text" id="cidade" placeholder=" " required readonly>
+              <label for="cidade">Cidade</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-map"></i>
+              <input type="text" id="estado" placeholder=" " required readonly>
+              <label for="estado">Estado</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-home"></i>
+              <input type="text" id="numero" placeholder=" " required>
+              <label for="numero">Número</label>
+            </div>
+            <div class="form-group">
+              <i class="fas fa-plus"></i>
+              <input type="text" id="complemento" placeholder=" ">
+              <label for="complemento">Complemento</label>
+            </div>
+            <div class="form-navigation">
+              <button class="prev-btn">Voltar</button>
+              <button class="submit-btn">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <input type="file" id="input-fundo" accept="image/*" style="display:none;">
+  </section>
+
+
+  <script src="../../../../../../GABI_PERFIL_COOP-master/GABI_PERFIL_COOP-master/java/pag1coop.js"></script>
+</body>
+
+</html>
