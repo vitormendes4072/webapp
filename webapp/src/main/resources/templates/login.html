@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8" />
@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
 
     <!-- CSS corrigido -->
-    <link rel="stylesheet" href="/style/login.css" />
+    <link rel="stylesheet" th:href="@{/style/login.css}" />
 
     <title>LineJobs - Login</title>
 </head>
@@ -19,7 +19,7 @@
 <body>
 <div class="container">
     <div class="left-side">
-        <img src="/assets/logo.png" alt="Logo LineJobs" class="logo-container" />
+        <img th:src="@{/assets/logo.png}" alt="Logo LineJobs" class="logo-container" />
         <h1>A Jornada Profissional que você sempre Sonhou</h1>
         <p>
             Acesse sua conta e descubra as melhores vagas de home office dentro do LineJobs.
@@ -29,7 +29,7 @@
         <div class="circle circle-left-bottom"></div>
     </div>
     <div class="right-side">
-        <form action="#" method="post" class="login-box">
+        <form th:action="@{/login}" method="post" class="login-box">
             <h2>Login</h2>
             <p>Bem-vindo de volta! Faça login para continuar.</p>
 
@@ -40,22 +40,23 @@
 
             <div class="form-wrapper">
                 <div class="toggle-wrapper">
-                        <span class="btn btn-1">
-                            <input type="checkbox" id="switch" />
-                            <label for="switch"><span></span></label>
-                        </span>
+                    <span class="btn btn-1">
+                        <input type="checkbox" id="switch" />
+                        <label for="switch"><span></span></label>
+                    </span>
                 </div>
 
                 <div class="input-group" id="emailGroup">
-                    <input type="email" id="email" required placeholder=" " />
+                    <input type="email" name="username" required placeholder=" " />
                     <label for="email">Email</label>
                     <span id="emailError" class="error-message" style="display: none;"></span>
                 </div>
                 <div class="input-group" id="passwordGroup">
-                    <input type="password" id="password" required placeholder=" " />
+                    <input type="password" name="password" required placeholder=" " />
                     <label for="password">Senha</label>
                     <span id="passwordError" class="error-message" style="display: none;"></span>
                 </div>
+
                 <div class="options">
                     <label><input type="checkbox" /> Lembrar-me!</label>
                     <a href="#">Esqueci minha senha</a>
@@ -63,7 +64,7 @@
                 <button type="submit">Log in</button>
 
                 <div class="signup-link">
-                    <p>Novo usuário? <a href="#">Criar Conta</a></p>
+                    <p>Novo usuário? <a th:href="@{/cadastro}">Criar Conta</a></p>
                 </div>
             </div>
         </form>
@@ -71,7 +72,7 @@
 </div>
 
 <!-- JS corrigido -->
-<script src="/script/login.js"></script>
+<script th:src="@{/script/login.js}"></script>
 </body>
 
 </html>

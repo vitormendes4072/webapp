@@ -16,16 +16,4 @@ document.addEventListener('DOMContentLoaded', function () {
   senha.addEventListener('input', validarFormulario);
   confirmaSenha.addEventListener('input', validarFormulario);
   termos.addEventListener('change', validarFormulario);
-
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-
-    if (senha.value !== confirmaSenha.value) {
-      alert('As senhas não coincidem.');
-      return;
-    }
-
-    alert('Cadastro concluído com sucesso!');
-    window.location.href = "login.html"; // ajustado para a mesma pasta
-  });
 });

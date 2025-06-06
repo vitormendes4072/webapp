@@ -1,14 +1,15 @@
 document.getElementById("recuperarForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    const email = document.getElementById("email").value;
-
-    if (!email) {
-      alert("Por favor, preencha o e-mail.");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Por favor, insira um e-mail válido.");
       return;
     }
 
+
     // Simula envio do código
     alert(`Código de verificação enviado para: ${email}`);
-    // Aqui você pode redirecionar ou prosseguir com lógica real
+    window.location.href = "redcodigo.html"; // ajuste conforme necessário
+
   });

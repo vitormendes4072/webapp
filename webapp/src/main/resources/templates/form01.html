@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LineJobs - Cadastro</title>
-    <link rel="stylesheet" href="/style/form01.css" />
+    <link rel="stylesheet" th:href="@{/style/form01.css}" />
 </head>
 <body>
 <div class="container">
@@ -20,13 +20,12 @@
             <span class="step"></span>
         </div>
 
-        <!-- ...código anterior mantido... -->
-        <form id="cadastroForm">
+        <form th:action="@{/cadastro-contato}" method="get" id="cadastroForm">
             <fieldset>
                 <legend>Informações Pessoais:</legend>
 
                 <div class="floating-label">
-                    <input type="text" id="nome" placeholder=" " required />
+                    <input type="text" id="nome" name="nome" placeholder=" " required />
                     <label for="nome">Nome*</label>
                 </div>
 
@@ -68,7 +67,7 @@
                         <label for="estado_civil">Estado Civil*</label>
                     </div>
                     <div class="floating-label">
-                        <input type="text" id="nacionalidade" placeholder=" " required />
+                        <input type="text" id="nacionalidade" name="nacionalidade" placeholder=" " required />
                         <label for="nacionalidade">Nacionalidade*</label>
                     </div>
                 </div>

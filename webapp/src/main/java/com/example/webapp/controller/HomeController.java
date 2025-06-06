@@ -1,8 +1,10 @@
 package com.example.webapp.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
@@ -83,12 +85,68 @@ public class HomeController {
     }
 
 
+    @GetMapping("/")
+    public String home() {
+        return "login"; // ou substitua por qualquer página inicial desejada
+    }
 
 
+    @PostMapping("/cadastro-contato")
+    public String processarContato(
+            @RequestParam String email,
+            @RequestParam String celular,
+            @RequestParam(required = false) String telefone,
+            @RequestParam String cep,
+            @RequestParam(required = false) String logradouro,
+            @RequestParam String numero,
+            @RequestParam(required = false) String complemento,
+            @RequestParam String bairro,
+            @RequestParam String cidade,
+            @RequestParam String estado,
+            Model model
+    ) {
+        return "redirect:/cadastro-dados-bancarios";
+    }
 
 
+    @PostMapping("/cadastro-dados-bancarios")
+    public String processarDadosBancarios(
+            @RequestParam String banco,
+            @RequestParam("tipo-conta") String tipoConta,
+            @RequestParam String agencia,
+            @RequestParam String conta,
+            @RequestParam("chave-pix") String chavePix,
+            Model model
+    ) {
+        // Aqui você pode armazenar os dados em sessão/DTO/etc
 
+        return "redirect:/cadastro-sobre-voce"; // próxima etapa do formulário
+    }
 
+    @PostMapping("/cadastro-sobre-voce")
+    public String processarSobreVoce(
+            @RequestParam String areaAtuacao,
+            @RequestParam String experiencia,
+            @RequestParam String formacao,
+            @RequestParam String disponibilidade,
+            @RequestParam String habilidades,
+            Model model
+    ) {
+        // Aqui você pode armazenar os dados se necessário
 
+        return "redirect:/cadastro-final";
+    }
+
+    @PostMapping("/cadastro-final")
+    public String processarCadastroFinal(
+            @RequestParam String senha,
+            @RequestParam String confirmaSenha,
+            Model model
+    ) {
+        // Aqui você pode salvar no banco de dados se quiser
+
+        // Redireciona para a tela de login após finalizar o cadastro
+        return "redirect:/login";
+    }
 
 }

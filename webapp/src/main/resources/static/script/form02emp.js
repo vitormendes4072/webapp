@@ -34,15 +34,8 @@ function limparCamposEndereco() {
   document.getElementById('estado').value = '';
 }
 
-// Redireciona para a próxima página
-document.getElementById('cadastroForm').addEventListener('submit', function (event) {
-  event.preventDefault();
-  // Aqui você pode adicionar validação extra antes de redirecionar, se quiser
-  window.location.href = "form03emp.html"; // Caminho correto dentro da pasta /index
-});
+// NÃO INTERCEPTAR o submit — o Spring cuidará da transição corretamente
+
 function voltarPagina() {
-  // Redireciona para a página anterior no histórico ou uma URL específica
-  window.history.back();
-  // ou, se preferir um redirecionamento fixo:
-  // window.location.href = "form01.html"; // exemplo
+  window.history.back(); // ou redirecione fixamente, se desejar
 }

@@ -7,8 +7,16 @@ document.addEventListener("DOMContentLoaded", () => {
   function validarSenhas() {
     const senhaValida = novaSenha.value.trim().length >= 6;
     const iguais = novaSenha.value === confirmarSenha.value;
+
+    if (!iguais && confirmarSenha.value !== '') {
+      confirmarSenha.setCustomValidity("As senhas não coincidem.");
+    } else {
+      confirmarSenha.setCustomValidity("");
+    }
+
     btnSalvar.disabled = !(senhaValida && iguais);
   }
+
 
   novaSenha.addEventListener('input', validarSenhas);
   confirmarSenha.addEventListener('input', validarSenhas);

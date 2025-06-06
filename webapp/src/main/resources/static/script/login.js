@@ -53,10 +53,9 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (!isValid) {
-                event.preventDefault();
-            } else {
-                alert('Login realizado (simulação)');
+                event.preventDefault(); // impede envio só se inválido
             }
+
         }
     });
 });

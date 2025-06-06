@@ -24,13 +24,10 @@ document.getElementById('cep').addEventListener('blur', function () {
   }
 });
 
-// Redireciona para a próxima página
-document.getElementById('cadastroForm').addEventListener('submit', function (event) {
-  event.preventDefault();
-  window.location.href = "form03.html";
-});
+// NÃO BLOQUEIE o submit com preventDefault
+// O Spring cuidará da navegação com th:action no form
 
 // Voltar para página anterior
 function voltarPagina() {
-  window.location.href = "form01.html";
+  window.history.back();
 }

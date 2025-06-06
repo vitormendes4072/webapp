@@ -49,9 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         if (!isValid) {
-            event.preventDefault();
-        } else {
-            alert('Login realizado (simulação)');
+            event.preventDefault(); // impede o envio só se houver erro
         }
+
     });
 });

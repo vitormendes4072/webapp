@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LineJobs - Dados Bancários</title>
-  <link rel="stylesheet" href="/style/form03.css" />
+  <link rel="stylesheet" th:href="@{/style/form03.css}" />
 </head>
 <body>
 <main class="container">
@@ -20,8 +20,8 @@
       <span class="step"></span>
     </div>
 
-    <form id="dadosBancariosForm">
-      <fieldset>
+    <form id="dadosBancariosForm" th:action="@{/cadastro-dados-bancarios}" method="post">
+    <fieldset>
         <legend>Dados Bancários:</legend>
 
         <div class="floating-label">

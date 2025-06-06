@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LineJobs - Sobre Você</title>
-  <link rel="stylesheet" href="/style/form04.css" />
+  <link rel="stylesheet" th:href="@{/style/form04.css}" />
 </head>
 <body>
 <main class="container">
@@ -20,34 +20,34 @@
       <span class="step"></span>
     </div>
 
-    <form id="sobreVoceForm">
+    <form id="sobreVoceForm" th:action="@{/cadastro-sobre-voce}" method="post">
       <fieldset>
         <legend>Nos conte sobre você:</legend>
 
         <div class="input-group">
           <div class="floating-label">
-            <input type="text" id="area-atuacao" placeholder=" " required />
+            <input type="text" id="area-atuacao" name="areaAtuacao" placeholder=" " required />
             <label for="area-atuacao">Área de Atuação*</label>
           </div>
           <div class="floating-label">
-            <input type="text" id="experiencia" placeholder=" " required />
+            <input type="text" id="experiencia" name="experiencia" placeholder=" " required />
             <label for="experiencia">Experiência Profissional*</label>
           </div>
         </div>
 
         <div class="input-group">
           <div class="floating-label">
-            <input type="text" id="formacao" placeholder=" " required />
+            <input type="text" id="formacao" name="formacao" placeholder=" " required />
             <label for="formacao">Formação Acadêmica*</label>
           </div>
           <div class="floating-label">
-            <input type="text" id="disponibilidade" placeholder=" " required />
+            <input type="text" id="disponibilidade" name="disponibilidade" placeholder=" " required />
             <label for="disponibilidade">Disponibilidade*</label>
           </div>
         </div>
 
         <div class="floating-label">
-          <textarea id="habilidades" placeholder=" " required></textarea>
+          <textarea id="habilidades" name="habilidades" placeholder=" " required></textarea>
           <label for="habilidades">Habilidades*</label>
         </div>
 

@@ -32,11 +32,6 @@ document.getElementById('rg').addEventListener('input', function () {
   this.value = mascaraRG(this.value);
 });
 
-document.getElementById("cadastroForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-  window.location.href = "form02.html"; // Caminho correto dentro da pasta /index
-});
-
 document.getElementById("voltarBtn").addEventListener("click", function () {
   window.history.back(); // Volta para a página anterior no histórico do navegador
 });
