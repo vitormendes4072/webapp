@@ -24,8 +24,8 @@
         </div>
 
         <!-- Formulário -->
-        <form id="cadastroForm">
-            <fieldset>
+        <form id="cadastroForm" th:action="@{/cadastro-empresa}" method="post">
+        <fieldset>
                 <legend>Informações:</legend>
 
                 <div class="floating-label">
@@ -88,20 +88,19 @@
                 <div class="input-group">
                     <div class="floating-label">
                         <select id="natureza_juridica" name="natureza_juridica" required>
-                            <option value="" disabled selected></option>
-                            <option value="sociedade_limitada">Sociedade Limitada</option>
-                            <option value="mei">Microempreendedor Individual</option>
-                            <option value="eirli">Empresa Individual de Responsabilidade Limitada</option>
-                            <option value="sociedade_anonima">Sociedade Anônima</option>
-                            <option value="scp">Sociedade em Conta de Participação</option>
-                            <option value="sociedade_simples">Sociedade Simples</option>
-                            <option value="cooperativa">Cooperativa</option>
-                            <option value="empresa_publica">Empresa Pública</option>
-                            <option value="sociedade_economia_mista">Sociedade de Economia Mista</option>
-                            <option value="ong">Organização Não Governamental</option>
-                            <option value="associacao">Associação</option>
-                            <option value="fundo_privado">Fundo Privado</option>
-                            <option value="consorcio">Consórcio de Empresas</option>
+                            <option value="Sociedade Limitada">Sociedade Limitada</option>
+                            <option value="Microempreendedor Individual">Microempreendedor Individual</option>
+                            <option value="Empresa Individual de Responsabilidade Limitada">Empresa Individual de Responsabilidade Limitada</option>
+                            <option value="Sociedade Anônima">Sociedade Anônima</option>
+                            <option value="Sociedade em Conta de Participação">Sociedade em Conta de Participação</option>
+                            <option value="Sociedade Simples">Sociedade Simples</option>
+                            <option value="Cooperativa">Cooperativa</option>
+                            <option value="Empresa Pública">Empresa Pública</option>
+                            <option value="Sociedade de Economia Mista">Sociedade de Economia Mista</option>
+                            <option value="Organização Não Governamental">Organização Não Governamental</option>
+                            <option value="Associação">Associação</option>
+                            <option value="Fundo Privado">Fundo Privado</option>
+                            <option value="Consórcio de Empresas">Consórcio de Empresas</option>
                         </select>
                         <label for="natureza_juridica">Natureza Jurídica*</label>
                     </div>
@@ -117,7 +116,10 @@
                     </div>
                 </div>
 
-                <div class="button-group">
+
+
+
+            <div class="button-group">
                     <button type="button" id="btn-voltar">Voltar</button>
                     <button type="submit" id="btn-avancar">Avançar</button>
                 </div>

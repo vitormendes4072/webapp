@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LineJobs - Criar Conta</title>
-  <link rel="stylesheet" href="/style/form02.css" />
+  <link rel="stylesheet" th:href="@{/style/form02emp.css}" />
 </head>
 <body>
 <div class="container">
@@ -20,7 +20,7 @@
       <span class="step"></span>
     </div>
 
-    <form id="cadastroForm">
+    <form id="cadastroForm" th:action="@{/cadastro-empresa-contato}" method="post">
       <fieldset>
         <legend>Informações de Contato:</legend>
 
@@ -78,7 +78,7 @@
         </div>
 
         <div class="button-group">
-          <button type="button" class="btn-voltar" onclick="voltarPagina()">Voltar</button>
+          <button type="button" class="btn-voltar" id="btn-voltar">Voltar</button>
           <button type="submit" class="btn-avancar">Avançar</button>
         </div>
 

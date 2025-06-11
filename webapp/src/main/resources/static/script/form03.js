@@ -1,3 +1,3 @@
 document.getElementById('btn-voltar').addEventListener('click', function () {
-  window.location.href = "form02.html";
+  window.location.href = "/cadastro-contato";
 });

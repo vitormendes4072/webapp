@@ -32,6 +32,6 @@ document.getElementById('rg').addEventListener('input', function () {
   this.value = mascaraRG(this.value);
 });
 
-document.getElementById("voltarBtn").addEventListener("click", function () {
-  window.history.back(); // Volta para a página anterior no histórico do navegador
+document.getElementById('btn-voltar').addEventListener('click', function () {
+  window.location.href = "/login";
 });

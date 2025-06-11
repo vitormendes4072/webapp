@@ -33,12 +33,14 @@ public class EmpresaService {
 
     public Empresa criarEmpresaCompleto(EmpresaRequest empresaRequest) {
         String senhaHash = passwordEncoder.encode(empresaRequest.getSenha());
-        return EmpresaMapper.toEmpresaFromRequest(empresaRequest, senhaHash);
+        Empresa empresa = EmpresaMapper.toEmpresaFromRequest(empresaRequest, senhaHash);
+        return empresaRepository.save(empresa); // ✅ persiste no banco
     }
+
 
     public EmpresaResponse buscarPerfil(Long id, String emailAutenticado) {
         Empresa empresa = empresaRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Empresa não encontrado"));
+                .orElseThrow(() -> new EntityNotFoundException("Empresa não encontrada com o ID: " + id));
 
         if (!empresa.getEmail().equalsIgnoreCase(emailAutenticado)) {
             throw new AccessDeniedException("Você não tem permissão para acessar este perfil.");

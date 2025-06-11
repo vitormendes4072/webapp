@@ -28,6 +28,6 @@ document.getElementById('cep').addEventListener('blur', function () {
 // O Spring cuidará da navegação com th:action no form
 
 // Voltar para página anterior
-function voltarPagina() {
-  window.history.back();
-}
+document.getElementById('btn-voltar').addEventListener('click', function () {
+  window.location.href = "/cadastro";
+});

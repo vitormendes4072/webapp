@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LineJobs - Criar Conta</title>
-    <link rel="stylesheet" href="/style/form05.css" />
+    <link rel="stylesheet" th:href="@{/style/form05.css}" />
 </head>
 <body>
 <main class="container">
+
+    <div th:if="${mensagem}" style="color: green;">
+        <p th:text="${mensagem}"></p>
+    </div>
+
+    <div th:if="${erro}" style="color: red;">
+        <p th:text="${erro}"></p>
+    </div>
     <section class="form-section">
         <h1>Criar uma nova conta</h1>
         <p class="subtext">Cadastre-se em apenas cinco etapas!</p>
@@ -20,8 +28,14 @@
             <div class="step active"></div>
         </div>
 
-        <form id="signupForm">
+        <form id="signupForm" th:action="@{/cadastro-final-empresa}" method="post">
             <fieldset>
+                <div th:if="${#fields.hasErrors('*')}">
+                    <ul>
+                        <li th:each="err : ${#fields.errors('*')}" th:text="${err}"></li>
+                    </ul>
+                </div>
+
                 <legend>Defina sua senha de acesso:</legend>
 
                 <div class="floating-label">
@@ -35,19 +49,18 @@
                 </div>
 
                 <div class="checkbox-container">
-                    <input type="checkbox" id="termos" />
-                    <label for="termos">
-                        Aceito os
-                        <a href="https://example.com/politica-privacidade" target="_blank">
-                            Termos e Políticas de Privacidade
-                        </a>*
+                    <input type="checkbox" id="aceitou_termos" name="aceitou_termos" value="true" required />
+                    <label for="aceitou_termos">
+                        Li e aceito os
+                        <a href="/politica-privacidade" target="_blank">Termos e Políticas de Privacidade</a>.
                     </label>
                 </div>
 
                 <div class="button-group">
-                    <button type="button" class="btn" onclick="window.location.href='form03emp.html'">Voltar</button>
-                    <button type="submit" class="btn">Avançar</button>
+                    <button type="button" class="btn" onclick="window.location.href='/cadastro-empresa-sobre'">Voltar</button>
+                    <button type="submit" class="btn" id="btnAvancar" >Avançar</button>
                 </div>
+
 
             </fieldset>
         </form>
@@ -63,6 +76,7 @@
     </section>
 </main>
 
-<script src="/script/form05emp.js"></script>
+<script src="/script/form05.js"></script>
 </body>
 </html>
+"

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LineJobs - Sobre Você</title>
-    <link rel="stylesheet" href="/style/form04.css" />
+    <link rel="stylesheet" th:href="@{/style/form04.css}" />
 </head>
 <body>
 <main class="container">
@@ -20,7 +20,7 @@
             <span class="step"></span>
         </div>
 
-        <form id="sobreVoceForm">
+        <form id="sobreVoceForm" th:action="@{/cadastro-empresa-sobre}" method="post">
             <fieldset>
                 <legend>Sobre o Responsável da Empresa:</legend>
 
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="btn-container">
-                    <button type="button" class="btn-voltar" onclick="window.location.href='form03emp.html'">Voltar</button>
+                    <button type="button" class="btn-voltar" onclick="window.location.href='/cadastro-dados-bancarios-empresa'">Voltar</button>
                     <button type="submit" class="btn-avancar">Avançar</button>
                 </div>
 

@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(() => {
             if (switchToggle.checked) {
                 // Só redireciona se o switch estiver marcado
-                window.location.href = 'loginemp.html';
+                window.location.href = '/login-empresa';
             }
         }, 100);
     });

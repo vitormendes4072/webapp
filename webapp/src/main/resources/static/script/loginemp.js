@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     switchLabel.addEventListener('click', function () {
         setTimeout(() => {
             if (!switchToggle.checked) {
-                window.location.href = 'login.html';
+                window.location.href = '/login';
             }
         }, 100);
     });

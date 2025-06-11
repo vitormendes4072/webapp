@@ -25,47 +25,39 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable())
+                // 1. Session será criada apenas quando necessário (ex: login via formulário)
                 .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                        .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
                 )
+                // 2. Regras de rotas
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
-                                "/",
-                                "/index.html",
-                                "/favicon.ico",
-                                "/style/**",
-                                "/script/**",
-                                "/assets/**",
-                                "/templates/**",
-                                "/auth/register-cooperado",
-                                "/auth/register-empresa",
-                                "/auth/login",
-                                "/auth/esqueci-senha",
-                                "/auth/redefinir-senha",
-                                "/login",
-                                "/cadastro",
-                                "/cadastro-contato",                // ← ADICIONAR
-                                "/cadastro-empresa",
-                                "/cadastro-empresa-contato",        // ← ADICIONAR
-                                "/cadastro-dados-bancarios",        // ← ADICIONAR
-                                "/cadastro-dados-bancarios-empresa",
-                                "/cadastro-sobre-voce",             // ← ADICIONAR
-                                "/cadastro-empresa-sobre",
-                                "/cadastro-final",                  // ← ADICIONAR
-                                "/cadastro-final-empresa",
-                                "/login-empresa",
-                                "/verificar-codigo",
-                                "/redefinir-senha",
-                                "/rednovasenha"
+                                "/", "/index.html", "/favicon.ico",
+                                "/style/**", "/script/**", "/assets/**", "/templates/**",
+                                "/auth/**",
+                                "/cadastro**", "/login**", "/verificar-codigo", "/redefinir-senha", "/rednovasenha"
                         ).permitAll()
                         .anyRequest().authenticated()
                 )
+                // 3. Login com formulário
+                .formLogin(form -> form
+                        .loginPage("/login-empresa") // onde está seu formulário
+                        .loginProcessingUrl("/login-empresa") // onde o formulário envia os dados
+                        .defaultSuccessUrl("/dashboard", true) // página pós-login
+                        .failureUrl("/login-empresa?error=true")
+                        .permitAll()
+                )
+                // 4. Logout
+                .logout(logout -> logout
+                        .logoutUrl("/logout")
+                        .logoutSuccessUrl("/login-empresa?logout=true")
+                        .permitAll()
+                )
+                // 5. Filtro JWT (somente para requests que enviam token)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
-
-
 
     @Bean
     public PasswordEncoder passwordEncoder() {

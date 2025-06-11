@@ -23,6 +23,14 @@ public class CustomUserDetails implements UserDetails {
         return entity;
     }
 
+    public boolean isEmpresa() {
+        return entity instanceof Empresa;
+    }
+
+    public boolean isUsuario() {
+        return entity instanceof Usuario;
+    }
+
     // Determina as authorities com base no tipo da entidade
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -99,8 +99,8 @@ public class EmpresaResponse {
         this.email = empresa.getEmail();
         this.telefone = empresa.getTelefone();
         this.site = empresa.getSite();
-        this.naturezaJuridica = String.valueOf(empresa.getNaturezaJuridica());
-        this.tipoUsuario = String.valueOf(empresa.getTipoUsuario());
+        this.naturezaJuridica = empresa.getNaturezaJuridica().getLabel();
+        this.tipoUsuario = empresa.getTipoUsuario().name(); // ou .toString(), dependendo do que o front espera
         this.fotoPerfil = empresa.getFotoPerfil();
 
         if (empresa.getEndereco() != null) {

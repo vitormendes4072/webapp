@@ -20,7 +20,7 @@
             <span class="step"></span>
         </div>
 
-        <form th:action="@{/cadastro-contato}" method="get" id="cadastroForm">
+        <form th:action="@{/cadastro}" method="post" id="cadastroForm">
             <fieldset>
                 <legend>Informações Pessoais:</legend>
 
@@ -73,8 +73,8 @@
                 </div>
 
                 <div class="button-group">
-                    <button type="button" id="voltarBtn">Voltar</button>
-                    <button type="submit">Avançar</button>
+                    <button type="button" class="btn-voltar" id="btn-voltar">Voltar</button>
+                    <button type="submit" class="btn-avancar">Avançar</button>
                 </div>
             </fieldset>
         </form>

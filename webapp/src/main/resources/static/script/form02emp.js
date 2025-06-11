@@ -36,6 +36,6 @@ function limparCamposEndereco() {
 
 // NÃO INTERCEPTAR o submit — o Spring cuidará da transição corretamente
 
-function voltarPagina() {
-  window.history.back(); // ou redirecione fixamente, se desejar
-}
+document.querySelector('.btn-voltar').addEventListener('click', function () {
+  window.location.href = "/cadastro-empresa";
+});

@@ -21,7 +21,7 @@ public class EmpresaMapper {
         empresa.setSite(request.getSite());
         empresa.setSenhaHash(senhaHash);
         empresa.setNaturezaJuridica(request.getNaturezaJuridicaEnum());
-        empresa.setTipoUsuario(TipoUsuario.EMPRESA);
+        empresa.setTipoUsuario(request.getTipoUsuario());
         empresa.setAceitouTermos(request.getAceitouTermos());
 
 
@@ -63,6 +63,7 @@ public class EmpresaMapper {
     }
 
     public static EmpresaResponse toEmpresaDTO(Empresa empresa) {
+
         EmpresaResponse dto = new EmpresaResponse();
 
         dto.setId(empresa.getId());
@@ -75,7 +76,7 @@ public class EmpresaMapper {
         dto.setEmail(empresa.getEmail());
         dto.setTelefone(empresa.getTelefone());
         dto.setSite(empresa.getSite());
-        dto.setNaturezaJuridica(empresa.getNaturezaJuridica().name());
+        dto.setNaturezaJuridica(empresa.getNaturezaJuridica().getLabel());
         dto.setFotoPerfil(empresa.getFotoPerfil());
 
         if (empresa.getEndereco() != null) {
@@ -115,8 +116,9 @@ public class EmpresaMapper {
         empresa.setEmail(request.getEmail());
         empresa.setTelefone(request.getTelefone());
         empresa.setSite(request.getSite());
-        empresa.setNaturezaJuridica(request.getNaturezaJuridicaEnum());
-        empresa.setTipoUsuario(TipoUsuario.valueOf(request.getTipoUsuario().name()));
+        if (request.getNaturezaJuridica() != null) {
+            empresa.setNaturezaJuridica(request.getNaturezaJuridicaEnum());
+        }
         empresa.setRazaoSocial((request.getRazaoSocial()));
         empresa.setSetorAtuacao(request.getSetorAtuacao());
         empresa.setDescricao(request.getDescricao());
@@ -158,6 +160,8 @@ public class EmpresaMapper {
         responsavel.setNomeCeo(request.getNomeCeo());
         responsavel.setEmailCeo(request.getEmailCeo());
         responsavel.setTelefoneCeo(request.getTelefoneCeo());
+
+
     }
 
 }
